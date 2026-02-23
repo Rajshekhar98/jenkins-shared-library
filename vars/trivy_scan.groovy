@@ -1,6 +1,6 @@
-def call(Map config = [:]) {
-    def imageName = config.imageName ?: 'rajshekhar98/easyshop-app'
-    def imageTag  = config.imageTag  ?: env.DOCKER_IMAGE_TAG
+def call() {
+    def imageName = env.DOCKER_IMAGE_NAME
+    def imageTag  = env.DOCKER_IMAGE_TAG
 
     sh """
     echo "Running Trivy scan..."
